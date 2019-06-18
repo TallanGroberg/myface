@@ -5,6 +5,7 @@ import { Route, Switch, } from "react-router-dom"
 import Home from './components/Home'
 import About from './components/About'
 import Navbar from './components/Navbar'
+
 import Login from './components/Login'
 import NoMatch from './components/NoMatch'
 import Register from './components/Register'
@@ -19,17 +20,19 @@ const App = () =>{
     <>
     <Navbar />
     <AuthProvider />
-      <AppStyles>
+      <FetchUser>
+        <AppStyles>
         <ComponentStyles>
           <Switch>
-            <ProtectedRoute exact path="/" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/Register" component={Register} />
             <Route component={NoMatch} />
           </Switch>
         </ComponentStyles>
-      </AppStyles>
+        </AppStyles>
+      </FetchUser>
     </>
   );
 }
