@@ -6,7 +6,10 @@ import 'semantic-ui-css/semantic.min.css'
 import { BrowserRouter, } from 'react-router-dom'
 import axios from 'axios'
 import { AuthProvider, } from './provider/AuthProvider'
+import { initMiddleware, } from 'devise-axios'
 
+
+initMiddleware();
 
 ReactDOM.render(
 
