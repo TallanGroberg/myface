@@ -8,6 +8,8 @@ import Navbar from './components/Navbar'
 import Login from './components/Login'
 import NoMatch from './components/NoMatch'
 import Register from './components/Register'
+import FetchUser from './components/FetchUser'
+import ProtectedRoute from './components/ProtectedRoute'
 import AuthProvider from './provider/AuthProvider'
 
 
@@ -20,7 +22,7 @@ const App = () =>{
       <AppStyles>
         <ComponentStyles>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <ProtectedRoute exact path="/" component={Home} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/Register" component={Register} />
