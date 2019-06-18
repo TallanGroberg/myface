@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
 
+
   serialize :liked_cats, Array
 
   def self.random_cat(ids)

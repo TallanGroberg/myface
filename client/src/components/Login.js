@@ -8,6 +8,7 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const { email, password, } = this.state;
+    debugger
     this.props.auth.handleLogin({ email, password, }, this.props.history);
   }
 
@@ -41,8 +42,8 @@ class Login extends React.Component {
             type='password'
             onChange={this.handleChange}
           />
-          <Segment textAlign='center' basic>
-            <Button primary type='submit'>Submit</Button>
+        <Segment textAlign='right' basic>
+            <Button inverted primary type="submit">Submit</Button>
           </Segment>
         </Form>
       </Segment>

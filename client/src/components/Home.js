@@ -22,6 +22,22 @@ class Home extends React.Component {
     }
   }
 
+  upVote = (id) => {
+    const { cats, } = this.state;
+    axios.put(`/api/cats/${id}`)
+    .then( () =>
+      this.setState(  { cats: cats.filter( c => c.id !== id), }) )
+
+    }
+
+    downVote = (id) => {
+      const { cats, } = this.state;
+      this.setState( { cats: cats.filter( c => c.id !== id), })
+    }
+
+
+
+
   render() {
     const cat = this.sample();
     if (cat) {
@@ -44,10 +60,10 @@ class Home extends React.Component {
               </Card.Meta>
             </Card.Content>
             <Card.Content extra>
-              <Button color="red" icon basic>
+              <Button color="red" icon basic onClick={() => this.downVote(cat.id)}>
                 <Icon name="thumbs down" />
               </Button>
-              <Button color="green" icon basic>
+              <Button color="green" icon basic onClick={() => this.upVote(cat.id)}>
                 <Icon name="thumbs up" />
               </Button>
             </Card.Content>

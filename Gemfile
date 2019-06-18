@@ -21,7 +21,6 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem "devise_token_auth", "~> 1.0.0"
 
 group :development, :test do
-  gem "pry-rails"
   gem "faker", :git => "https://github.com/stympy/faker.git", :branch => "master"
 end
 
