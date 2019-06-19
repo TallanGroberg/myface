@@ -27,12 +27,12 @@ class Home extends React.Component {
     axios.put(`/api/cats/${id}`)
     .then( () =>
       this.setState(  { cats: cats.filter( c => c.id !== id), }) )
-
     }
 
     downVote = (id) => {
+
       const { cats, } = this.state;
-      axios.put(`/aip/cats${id}`)
+      axios.put(`/api/down_vote/${id}`)
       this.setState( { cats: cats.filter( c => c.id !== id), })
     }
 
@@ -74,7 +74,7 @@ class Home extends React.Component {
               My Cats
             </Button>
           </Link>
-          <Link to="/my_cats">
+          <Link to="/down_vote">
             <Button color="red">
               ugly Cats
             </Button>

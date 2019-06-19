@@ -13,6 +13,7 @@ import FetchUser from './components/FetchUser'
 import ProtectedRoute from './components/ProtectedRoute'
 import AuthProvider from './provider/AuthProvider'
 import MyCats from './components/MyCats'
+import DownVote from './components/DownVote'
 
 
 const App = () =>{
@@ -27,6 +28,7 @@ const App = () =>{
           <Switch>
             <ProtectedRoute exact path="/" component={Home} />
             <ProtectedRoute exact path='/my_cats' component={MyCats} />
+            <ProtectedRoute exact path='/down_vote' component={DownVote} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/Register" component={Register} />

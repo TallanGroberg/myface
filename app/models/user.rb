@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
 
 
   serialize :liked_cats, Array
+  serialize :disliked_cats, Array
 
   def self.random_cat(ids)
     ids = ids.empty? ? [0] : ids
@@ -21,12 +22,9 @@ class User < ActiveRecord::Base
     Cat.where("id IN (?)", ids)
   end
 
-  serialize :ugly_cats, Array
-
   def self.disliked(ids)
     ids = ids.empty? ? [0] : ids
     Cat.where("id IN (?)", ids)
-
   end
 
 

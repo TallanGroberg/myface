@@ -92,6 +92,7 @@ class Register extends React.Component {
                 placeholder="Confirm Password"
                 onChange={this.handleChange}
               />
+
               <Segment basic textAlign="right">
                 <Button inverted primary type="submit">Submit</Button>
               </Segment>

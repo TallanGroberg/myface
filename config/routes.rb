@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :cats, only: [:index, :update]
     get 'my_cats', to: 'cats#my_cats'
-    get 'ugly_cats', to: 'cats#ugly_cats'
+    get "down_vote/", to: "cats#down_vote"
+    put "down_vote/:id", to: "cats#down_vote"
   end
 end
