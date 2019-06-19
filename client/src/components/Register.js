@@ -5,16 +5,16 @@ import { Button, Segment, Header, Form, } from 'semantic-ui-react';
 
 
 class Register extends React.Component {
-  state = { email: '', password: '', passwordConfirmation: '', }
+  state = {name: '', nickname: '', email: '', password: '', passwordConfirmation: '',  }
 
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { email, password, passwordConfirmation } = this.state;
+    const { name, nickname, email, password, passwordConfirmation } = this.state;
     const { auth: { handleRegister, }, history, } = this.props;
 
     if ( password === passwordConfirmation )
-      handleRegister({ email, password, passwordConfirmation, }, history);
+      handleRegister({ name, nickname, email, password, passwordConfirmation, }, history);
     else
     alert("passwords don't match")
 
@@ -29,7 +29,7 @@ class Register extends React.Component {
 
 
   render() {
-    const { email, password, passwordConfirmation, } = this.state;
+    const { name, nickname, email, password, passwordConfirmation, } = this.state;
 
     return (
 
@@ -48,6 +48,29 @@ class Register extends React.Component {
                 onChange={this.handleChange}
 
               />
+
+              <Form.Input
+                label="name"
+                required
+                autoFocus
+                name='name'
+                value={name}
+                placeholder="Enter name"
+                onChange={this.handleChange}
+
+              />
+
+              <Form.Input
+                label="nick name"
+                required
+                autoFocus
+                name='nickname'
+                value={nickname}
+                placeholder="Enter nick name"
+                onChange={this.handleChange}
+
+              />
+
 
               <Form.Input
                 label="password"

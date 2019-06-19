@@ -8,10 +8,17 @@ class Api::CatsController < ApplicationController
 
   def update
     current_user.liked_cats << params[:id].to_i
+    #potential breakpoint
+    current_user.ugly_cats << params[:id].to_i
     current_user.save
   end
 
   def my_cats
     render json: User.liked(current_user.liked_cats)
   end
+
+  def ugly_cats
+    render json: User.disliked(current_user.ugly_cats)
+  end
+
 end

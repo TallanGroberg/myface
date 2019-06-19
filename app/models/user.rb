@@ -21,6 +21,14 @@ class User < ActiveRecord::Base
     Cat.where("id IN (?)", ids)
   end
 
+  serialize :ugly_cats, Array
+
+  def self.disliked(ids)
+    ids = ids.empty? ? [0] : ids
+    Cat.where("id IN (?)", ids)
+
+  end
+
 
 
 end

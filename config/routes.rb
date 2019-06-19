@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api do
     resources :cats, only: [:index, :update]
-    get 'my_cats', to: 'cats#my_cats' 
+    get 'my_cats', to: 'cats#my_cats'
+    get 'ugly_cats', to: 'cats#ugly_cats'
   end
 end
